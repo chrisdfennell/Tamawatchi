@@ -1,0 +1,75 @@
+========================================================================
+GARMIN CONNECT IQ STORE LISTING INFO - GARMIGOTCHI VIRTUAL PET
+========================================================================
+
+------------------------------------------------------------------------
+FIELD: Title (Max 30 characters)
+------------------------------------------------------------------------
+Garmigotchi - Virtual Pet
+
+
+------------------------------------------------------------------------
+FIELD: Description (Max 8000 characters)
+------------------------------------------------------------------------
+Garmigotchi is a Tamagotchi-style virtual pet that lives right on your Garmin watch. Hatch an egg, raise your little companion, and keep it happy, fed, and healthy - all powered by your real-world activity. The more you move, the better your pet thrives.
+
+Adopt one of five pixel-art animals, watch it grow from an egg into a full-grown adult, and discover what it becomes based on how well you care for it. Every visit is a quick, charming check-in: feed it, play a mini-game, clean up, or tuck it in for the night.
+
+Key Features:
+- Five adoptable pets, each with its own art: Cat, Dog, Dragon, Penguin, and Fox.
+- Four life stages: your pet grows from Egg to Baby to Teen to Adult over time.
+- Expressive moods - it looks happy, sad, sleepy, or sick depending on how it feels, and breathes gently when idle.
+- Five needs to balance, each with its own icon: Hunger, Happiness, Energy, Health, and Cleanliness.
+- Feed it - and every animal eats its own favorite food (the cat gets a fish, the dog a bone, the fox berries...), nibbled away one bite at a time.
+- Play a quick "catch the ball" mini-game; the better your timing, the happier your pet.
+- Clean up after it - poop piles up over time and must be cleaned before it makes a mess.
+- Sleep - tuck your pet in for a multi-hour nap, and it even dozes off on its own at night.
+- Medicine - nurse your pet back to health when it gets sick.
+- Playful animations for every action: food eaten bite by bite, a refreshing shower, a bouncing ball, drifting Zzz's, and more.
+- A living day/night world with a sun and clouds by day, a moon and stars by night - your pet sleeps when you sleep.
+- Aging, evolution, and legacy: how you raise your pet decides the adult form it grows into, and when one pet passes on, the next generation hatches and inherits a trait that helps it live better.
+- Powered by your activity: your real steps and heart rate feed and energize your pet, so wearing your watch and staying active keeps it thriving.
+- Glance support for an at-a-glance status check from your widget carousel.
+- A watch-face complication so your pet's wellbeing can show on your favorite watch face.
+- Simple, touch- and button-friendly controls, plus a settings menu to toggle vibration, change pets, or start over.
+- Your pet's state is saved between sessions and keeps living while the app is closed - check back later and see how it's doing.
+
+How to Play:
+- Open the app and choose your pet. Press START (or tap the on-screen pet) to select, then hatch the egg.
+- Care for your pet: press the START button, or tap the "Care" button at the bottom of the screen, to open the Care menu. Choose an action - Feed, Play, Clean, Sleep, Medicine, or Discipline - and it happens right away.
+- Check the stats: tap anywhere on the screen (away from the Care button), or press the UP/DOWN buttons, to flip to the Stats page. It shows all five needs, your pet's age, and its generation. Tap again to go back to your pet.
+- Keep the needs up. When Hunger, Happiness, Energy, Health, or Cleanliness runs low, your pet gets unhappy - feed it, play with it, clean up after it, and let it sleep. Move around during the day, too: your steps and heart rate help feed and energize it.
+- Let it rest. Choose Sleep for a multi-hour nap (it also falls asleep on its own at night). Press the button to wake it early.
+- Settings: long-press the MENU button to toggle vibration, change your pet, or reset the game. Press BACK to exit.
+- Stick with it. Raise your pet well and it grows into a special adult form; over time you can pass a helpful trait down to the next generation.
+
+
+------------------------------------------------------------------------
+FIELD: What's New in this Version (Max 8000 characters)
+------------------------------------------------------------------------
+Initial Release:
+- Adopt and raise one of five pixel-art pets (Cat, Dog, Dragon, Penguin, Fox).
+- Egg-to-adult growth with happy, sad, sleepy, and sick moods.
+- Full care loop: Feed, Play (mini-game), Clean, Sleep, and Medicine.
+- Per-animal foods and animated care actions.
+- Poop-and-clean-up mechanic and sickness with a cure.
+- Multi-hour sleep with slower decay, plus automatic sleep at night.
+- Living day/night world with sun, clouds, moon, and stars.
+- Aging with care-based adult forms, plus a death legacy that passes an
+  inherited trait to the next generation.
+- Real activity integration: steps and heart rate feed your pet.
+- Glance summary and a published watch-face complication.
+- Persistent state that keeps simulating while the app is closed.
+
+
+------------------------------------------------------------------------
+FIELD: Settings (Select Yes/No as indicated)
+------------------------------------------------------------------------
+Category: Watch Apps
+Subcategory: Games
+ANT+ Profiles: No
+Regional Limits: No
+Monetization: No
+Do you collect personal or sensitive data?: No
+Is this app designed for a specific company or event?: No
+========================================================================
