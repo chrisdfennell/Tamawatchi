@@ -15,9 +15,31 @@ class TamagotchiApp extends Application.AppBase {
     function onStart(state) as Void {
         System.println("Garmi-gotchi onStart");
         pet = StorageManager.hasPet() ? StorageManager.loadPet() : new Pet();
+        applyCustomName(pet);
         pet.updateFromClock();
         StorageManager.savePet(pet);
         PetComplication.publish(pet);
+    }
+
+    // A non-empty custom name typed in the Garmin Connect app overrides the
+    // in-app chosen name.
+    function applyCustomName(p) as Void {
+        try {
+            var custom = Application.Properties.getValue("petName");
+            if (custom != null && custom instanceof Lang.String && custom.length() > 0) {
+                p.name = custom;
+            }
+        } catch (ex) {
+        }
+    }
+
+    function onSettingsChanged() as Void {
+        if (pet != null) {
+            applyCustomName(pet);
+            StorageManager.savePet(pet);
+            PetComplication.publish(pet);
+            WatchUi.requestUpdate();
+        }
     }
 
     function onStop(state) as Void {

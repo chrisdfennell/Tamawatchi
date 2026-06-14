@@ -1,0 +1,5 @@
+<settings>
+    <setting propertyKey="@Properties.petName" title="@Strings.PetNameTitle">
+        <settingConfig type="alphaNumeric" maxLength="12" />
+    </setting>
+</settings>

@@ -11,4 +11,6 @@
     <string id="PetMoodLong">Pet Wellbeing</string>
     <string id="PetMoodShort">PET</string>
     <string id="PetMoodName">Garmi Pet</string>
+
+    <string id="PetNameTitle">Pet Name (custom)</string>
 </strings>

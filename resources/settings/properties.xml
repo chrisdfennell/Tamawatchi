@@ -1,0 +1,5 @@
+<properties>
+    <!-- Custom pet name typed in the Garmin Connect / Connect IQ app. Empty means
+         use the name chosen in-app. -->
+    <property id="petName" type="string"></property>
+</properties>

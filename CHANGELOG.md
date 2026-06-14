@@ -12,6 +12,8 @@ and this project aims to follow [Semantic Versioning](https://semver.org/spec/v2
   **Play now picks one at random** each time, so it stays fresh.
 - **Name your pet** from a preset list when you first adopt it (the name shows at
   the top), plus a **Rename** option in Settings.
+- **Custom typed names** via the Garmin Connect app settings (the `petName`
+  property overrides the in-app name when set).
 
 ### Changed
 - The pet name/title now has a **black outline** so it reads clearly over the pet
