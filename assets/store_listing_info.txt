@@ -9,7 +9,7 @@ Garmigotchi - Virtual Pet
 
 
 ------------------------------------------------------------------------
-FIELD: Description (Max 8000 characters)
+FIELD: Description (Max 4000 characters)
 ------------------------------------------------------------------------
 Garmigotchi is a Tamagotchi-style virtual pet that lives right on your Garmin watch. Hatch an egg, raise your little companion, and keep it happy, fed, and healthy - all powered by your real-world activity. The more you move, the better your pet thrives.
 
@@ -48,7 +48,7 @@ How to Play:
 
 
 ------------------------------------------------------------------------
-FIELD: What's New in this Version (Max 8000 characters)
+FIELD: What's New in this Version (Max 4000 characters)
 ------------------------------------------------------------------------
 Initial Release:
 - Adopt, name, and raise one of five pixel-art pets (Cat, Dog, Dragon, Penguin, Fox).
