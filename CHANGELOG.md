@@ -7,6 +7,10 @@ and this project aims to follow [Semantic Versioning](https://semver.org/spec/v2
 
 ## [Unreleased]
 
+### Added
+- Two more Play mini-games — a **reaction test** and a **button masher** — and
+  **Play now picks one at random** each time, so it stays fresh.
+
 ## [1.1.0] - 2026-06-14
 
 ### Added

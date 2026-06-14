@@ -25,10 +25,9 @@ class CareMenuDelegate extends WatchUi.Menu2InputDelegate {
         var id = item.getId();
         WatchUi.popView(WatchUi.SLIDE_DOWN);
         if (id == :play) {
-            // Play launches the catch-the-ball mini-game.
+            // Play launches a random mini-game.
             if (mainView.pet.alive && mainView.pet.stage != STAGE_EGG && !mainView.pet.isSleeping()) {
-                var game = new PlayGameView(mainView.pet);
-                WatchUi.pushView(game, new PlayGameDelegate(game), WatchUi.SLIDE_UP);
+                pushRandomMiniGame(mainView.pet);
             }
         } else {
             mainView.performCare(id as Symbol);
