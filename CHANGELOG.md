@@ -7,6 +7,8 @@ and this project aims to follow [Semantic Versioning](https://semver.org/spec/v2
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-06-14
+
 ### Added
 - Support for the **fenix 8 family** (`fenix843mm`, `fenix847mm`, `fenix8pro47mm`,
   `fenix8solar47mm`, `fenix8solar51mm`), which also covers the matching
@@ -38,5 +40,6 @@ and this project aims to follow [Semantic Versioning](https://semver.org/spec/v2
   including time spent asleep, with persistent state across launches.
 - Touch routing: Care opens only from the button; tapping elsewhere opens Stats.
 
-[Unreleased]: https://github.com/chrisdfennell/Garmigotchi/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/chrisdfennell/Garmigotchi/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/chrisdfennell/Garmigotchi/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/chrisdfennell/Garmigotchi/releases/tag/v1.0.0
