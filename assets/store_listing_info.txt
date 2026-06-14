@@ -29,17 +29,19 @@ Key Features:
 - A living day/night world with a sun and clouds by day, a moon and stars by night - your pet sleeps when you sleep.
 - Aging, evolution, and legacy: how you raise your pet decides the adult form it grows into, and when one pet passes on, the next generation hatches and inherits a trait that helps it live better.
 - Powered by your activity: your real steps and heart rate feed and energize your pet, so wearing your watch and staying active keeps it thriving.
+- A live activity panel on the main screen showing your daily steps, heart rate, and your pet's happiness at a glance.
 - Glance support for an at-a-glance status check from your widget carousel.
 - A watch-face complication so your pet's wellbeing can show on your favorite watch face.
 - Simple, touch- and button-friendly controls, plus a settings menu to toggle vibration, change pets, or start over.
 - Your pet's state is saved between sessions and keeps living while the app is closed - check back later and see how it's doing.
 
 How to Play:
-- Open the app and choose your pet. Press START (or tap the on-screen pet) to select, then hatch the egg.
-- Care for your pet: press the START button, or tap the "Care" button at the bottom of the screen, to open the Care menu. Choose an action - Feed, Play, Clean, Sleep, Medicine, or Discipline - and it happens right away.
-- Check the stats: tap anywhere on the screen (away from the Care button), or press the UP/DOWN buttons, to flip to the Stats page. It shows all five needs, your pet's age, and its generation. Tap again to go back to your pet.
+- Open the app and choose your pet, then press START to hatch the egg.
+- The main screen shows your pet standing above a live panel with your daily steps, heart rate, and your pet's happiness.
+- Care for your pet: press the START button to open the Care menu. Choose an action - Feed, Play, Clean, Sleep, Medicine, or Discipline - and it happens right away.
+- Check the stats: tap the screen (or press the UP/DOWN buttons) to flip to the Stats page. It shows all five needs, your pet's age, and its generation. Tap again to go back to your pet.
 - Keep the needs up. When Hunger, Happiness, Energy, Health, or Cleanliness runs low, your pet gets unhappy - feed it, play with it, clean up after it, and let it sleep. Move around during the day, too: your steps and heart rate help feed and energize it.
-- Let it rest. Choose Sleep for a multi-hour nap (it also falls asleep on its own at night). Press the button to wake it early.
+- Let it rest. Choose Sleep for a multi-hour nap (it also falls asleep on its own at night). Press START to wake it early.
 - Settings: long-press the MENU button to toggle vibration, change your pet, or reset the game. Press BACK to exit.
 - Stick with it. Raise your pet well and it grows into a special adult form; over time you can pass a helpful trait down to the next generation.
 
