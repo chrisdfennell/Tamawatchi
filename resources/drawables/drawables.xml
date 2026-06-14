@@ -1,0 +1,41 @@
+<drawables>
+    <bitmap id="LauncherIcon" filename="../images/app_icon_500.png" />
+
+    <bitmap id="CatIdle" filename="../images/cat_idle.png" />
+    <bitmap id="CatHappy" filename="../images/cat_happy.png" />
+    <bitmap id="CatSad" filename="../images/cat_sad.png" />
+    <bitmap id="CatSleep" filename="../images/cat_sleeping.png" />
+    <bitmap id="CatSick" filename="../images/cat_sick_poopy.png" />
+
+    <bitmap id="DogIdle" filename="../images/dog_idle.png" />
+    <bitmap id="DogHappy" filename="../images/dog_happy.png" />
+    <bitmap id="DogSad" filename="../images/dog_sad.png" />
+    <bitmap id="DogSleep" filename="../images/dog_sleeping.png" />
+    <bitmap id="DogSick" filename="../images/dog_sick_poopy.png" />
+
+    <bitmap id="DragonIdle" filename="../images/dragon_idle.png" />
+    <bitmap id="DragonHappy" filename="../images/dragon_happy.png" />
+    <bitmap id="DragonSad" filename="../images/dragon_sad.png" />
+    <bitmap id="DragonSleep" filename="../images/dragon_sleeping.png" />
+    <bitmap id="DragonSick" filename="../images/dragon_sick_poopy.png" />
+
+    <bitmap id="PenguinIdle" filename="../images/penguin_idle.png" />
+    <bitmap id="PenguinHappy" filename="../images/penguin_happy.png" />
+    <bitmap id="PenguinSad" filename="../images/penguin_sad.png" />
+    <bitmap id="PenguinSleep" filename="../images/penguin_sleeping.png" />
+    <bitmap id="PenguinSick" filename="../images/penguin_sick_poopy.png" />
+
+    <bitmap id="FoxIdle" filename="../images/fox_idle.png" />
+    <bitmap id="FoxHappy" filename="../images/fox_happy.png" />
+    <bitmap id="FoxSad" filename="../images/fox_sad.png" />
+    <bitmap id="FoxSleep" filename="../images/fox_sleeping.png" />
+    <bitmap id="FoxSick" filename="../images/fox_sick_poopy.png" />
+
+    <bitmap id="PawComplication" filename="../images/paw_complication.svg" />
+
+    <bitmap id="Egg" filename="../images/egg.png" />
+    <bitmap id="Baby" filename="../images/baby.png" />
+    <bitmap id="Ghost" filename="../images/death_ghost.png" />
+    <bitmap id="HeartFull" filename="../images/heart_full.png" />
+    <bitmap id="PoopIcon" filename="../images/poop_icon.png" />
+</drawables>

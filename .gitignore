@@ -1,0 +1,19 @@
+# Build output
+bin/
+*.prg
+*.iq
+*.debug.xml
+
+# Connect IQ developer signing key (never commit)
+*.der
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local Claude Code config
+.claude/

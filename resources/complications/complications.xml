@@ -1,0 +1,16 @@
+<complications>
+    <complication id="0" access="public"
+                  longLabel="@Strings.PetMoodLong"
+                  shortLabel="@Strings.PetMoodShort"
+                  icon="@Drawables.PawComplication"
+                  glancePreview="true">
+        <faceIt defaultText="@Strings.PetMoodName" />
+        <range>
+            <value>0</value>
+            <value>25</value>
+            <value>50</value>
+            <value>75</value>
+            <value>100</value>
+        </range>
+    </complication>
+</complications>

@@ -1,0 +1,14 @@
+<strings>
+    <string id="AppName">Garmi-gotchi</string>
+    <string id="ChoosePet">Choose your pet</string>
+    <string id="Feed">Feed</string>
+    <string id="Play">Play</string>
+    <string id="Clean">Clean</string>
+    <string id="Rest">Rest</string>
+    <string id="Discipline">Discipline</string>
+    <string id="Revive">Revive</string>
+
+    <string id="PetMoodLong">Pet Wellbeing</string>
+    <string id="PetMoodShort">PET</string>
+    <string id="PetMoodName">Garmi Pet</string>
+</strings>
