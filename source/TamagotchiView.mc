@@ -97,7 +97,7 @@ class TamagotchiView extends WatchUi.View {
             pet.lastMessage = "Hungry! Walk or feed.";
         } else if (need == "Needs play") {
             pet.lastMessage = "Play time?";
-        } else if (need == "Messy") {
+        } else if (need == "Messy" && pet.isMessy()) {
             pet.lastMessage = "Clean up time.";
         } else if (!pet.alive) {
             pet.lastMessage = "Select to revive.";
@@ -142,6 +142,58 @@ class TamagotchiView extends WatchUi.View {
     function showPet() as Void {
         screen = SCREEN_PET;
         WatchUi.requestUpdate();
+    }
+
+    // The primary (START button / Care-button tap) action.
+    function primaryAction() as Void {
+        if (handlePrimary()) {
+            return;
+        }
+        openCare();
+    }
+
+    function openCare() as Void {
+        WatchUi.pushView(buildCareMenu(), new CareMenuDelegate(self), WatchUi.SLIDE_UP);
+    }
+
+    // Touch routing: only the Care button opens Care; tapping anywhere else on
+    // the pet page flips to the Stats page (and a tap on Stats returns).
+    function handleTap(x as Number, y as Number) as Void {
+        if (choosingPet) {
+            choosePet();
+            return;
+        }
+        if (showingHelp) {
+            dismissHelp();
+            return;
+        }
+        if (animType != null) {
+            return;
+        }
+        if (screen == SCREEN_STATS) {
+            showPet();
+            return;
+        }
+        if (inCareButton(x, y)) {
+            primaryAction();
+        } else {
+            toggleScreen();
+        }
+    }
+
+    function inCareButton(x as Number, y as Number) as Boolean {
+        var ds = System.getDeviceSettings();
+        var w = ds.screenWidth;
+        var h = ds.screenHeight;
+        var small = (minNum(w, h) < 218);
+        var sb = h - (small ? 18 : 30);
+        var pillW = minNum(w - 118, 104);
+        var pillY = sb - 20;
+        var left = (w / 2) - (pillW / 2) - 12;
+        var right = (w / 2) + (pillW / 2) + 12;
+        var topY = pillY - 12;
+        var botY = pillY + 36;
+        return (x >= left && x <= right && y >= topY && y <= botY);
     }
 
     // The primary (START/tap) action. Handles the contextual cases directly and
@@ -418,15 +470,26 @@ class TamagotchiView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(w / 2, top, Graphics.FONT_SMALL, pet.name + " - " + stageName() + pet.formSymbol(), Graphics.TEXT_JUSTIFY_CENTER);
 
-        dc.setColor(0xFFDD55, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(w / 2, top + 24, Graphics.FONT_XTINY, shortMessage(), Graphics.TEXT_JUSTIFY_CENTER);
-
         var iconSize = 9;
         var pad = 6;
         var valW = 28;
         var barW = minNum(w - 132, 116);
         var rowW = iconSize + pad + barW + 6 + valW;
         var x = (w - rowW) / 2;
+
+        // Dark panel behind the bars so they stay readable over the day/night scene.
+        var panelX = x - 12;
+        var panelW = rowW + 24;
+        if (panelX < 4) {
+            panelX = 4;
+            panelW = w - 8;
+        }
+        var panelTop = top + 40;
+        dc.setColor(0x0E1B2E, Graphics.COLOR_TRANSPARENT);
+        dc.fillRoundedRectangle(panelX, panelTop, panelW, safeBottom(dc) + 2 - panelTop, 10);
+
+        dc.setColor(0xFFDD55, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(w / 2, top + 24, Graphics.FONT_XTINY, shortMessage(), Graphics.TEXT_JUSTIFY_CENTER);
 
         var regionTop = top + 44;
         var regionBottom = safeBottom(dc) - 16;
@@ -868,7 +931,7 @@ class TamagotchiView extends WatchUi.View {
         if (need == "Hungry") { return "Hungry"; }
         if (need == "Needs play") { return "Wants play"; }
         if (need == "Sleepy") { return "Sleepy"; }
-        if (need == "Messy") { return "Messy"; }
+        if (need == "Messy" && pet.isMessy()) { return "Messy"; }
         if (need == "Unwell") { return "Unwell"; }
         return pet.lastMessage;
     }
@@ -900,18 +963,18 @@ class TamagotchiInputDelegate extends WatchUi.BehaviorDelegate {
         var v = view();
         if (v.choosingPet) {
             v.choosePet();
-            return true;
+        } else {
+            v.primaryAction();
         }
-        if (v.handlePrimary()) {
-            return true;
-        }
-        // Healthy, hatched pet on the pet page: open the Care menu.
-        WatchUi.pushView(buildCareMenu(), new CareMenuDelegate(v), WatchUi.SLIDE_UP);
         return true;
     }
 
     function onTap(evt as ClickEvent) as Boolean {
-        return activate();
+        var c = evt.getCoordinates();
+        if (c != null) {
+            view().handleTap(c[0], c[1]);
+        }
+        return true;
     }
 
     function onNextPage() as Boolean {

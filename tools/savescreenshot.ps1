@@ -250,16 +250,23 @@ if ($simJson.display.shape -eq "round") {
     $resizedBmp = $maskedBmp
 }
 
-# Save image to assets (resolved relative to this script's location)
-$outputPath = Join-Path $PSScriptRoot "assets\screen_active.png"
-Write-Host "Saving watchface screenshot to $outputPath"
-if (Test-Path $outputPath) {
-    Remove-Item $outputPath -Force
+# Save to the project assets folder (one level up from tools/), using the next
+# free numbered filename so successive captures accumulate: screen_active1.png,
+# screen_active2.png, ...
+$assetsDir = Join-Path (Split-Path $PSScriptRoot -Parent) "assets"
+if (!(Test-Path $assetsDir)) {
+    New-Item -ItemType Directory -Path $assetsDir | Out-Null
 }
+$n = 1
+do {
+    $outputPath = Join-Path $assetsDir "screen_active$n.png"
+    $n++
+} while (Test-Path $outputPath)
+Write-Host "Saving watchface screenshot to $outputPath"
 $resizedBmp.Save($outputPath, [System.Drawing.Imaging.ImageFormat]::Png)
 
 # Clean up
 $capturedBmp.Dispose()
 $resizedBmp.Dispose()
 
-Write-Host "Successfully captured watchface and updated screen_active.png!" -ForegroundColor Green
+Write-Host "Successfully captured watchface to $outputPath!" -ForegroundColor Green

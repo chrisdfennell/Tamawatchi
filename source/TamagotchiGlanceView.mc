@@ -96,7 +96,7 @@ class TamagotchiGlanceView extends WatchUi.GlanceView {
         if (pet.happiness < 40) { needs.add("Bored"); }
         if (pet.energy < 40) { needs.add("Sleepy"); }
         if (pet.health < 40) { needs.add("Sick"); }
-        if (pet.cleanliness < 40 || pet.poopCount > 0) { needs.add("Messy"); }
+        if (pet.isMessy()) { needs.add("Messy"); }
 
         if (needs.size() == 0) {
             return (pet.averageStats() > 75) ? "Thriving!" : "Content";

@@ -176,9 +176,9 @@ class Pet {
             lastMessage = "Getting sleepy...";
         }
 
-        // The pet poops over time (faster while awake). Each pile left on screen
-        // keeps dragging cleanliness down until it is cleaned up.
-        poopProgress += awakeH * 0.45 + asleepH * 0.1;
+        // The pet poops over time (roughly one pile every ~4 awake hours). Piles
+        // left on screen keep dragging cleanliness down until cleaned up.
+        poopProgress += awakeH * 0.25 + asleepH * 0.05;
         while (poopProgress >= 1.0 && poopCount < MAX_POOP) {
             poopCount += 1;
             poopProgress -= 1.0;
@@ -187,7 +187,7 @@ class Pet {
             poopProgress = 1.0;
         }
         if (poopCount > 0) {
-            cleanliness -= hours * poopCount * 1.6;
+            cleanliness -= hours * poopCount * 0.9;
         }
 
         clampAll();
@@ -211,7 +211,7 @@ class Pet {
         hunger += 28;
         happiness += 4;
         cleanliness -= 5;
-        poopProgress += 0.35;   // what goes in must come out
+        poopProgress += 0.2;   // what goes in must come out
         clampAll();
         lastMessage = "Yum!";
         return lastMessage;
@@ -270,6 +270,12 @@ class Pet {
     // Sick when health is low; Medicine is the cure.
     function isSick() as Boolean {
         return alive && health < 30;
+    }
+
+    // Actually messy enough to need a clean-up: a low cleanliness stat, or poop
+    // piling up. A single stray pile is tolerated so it doesn't nag constantly.
+    function isMessy() as Boolean {
+        return alive && (cleanliness < 35 || poopCount >= 2);
     }
 
     function medicine() as String {

@@ -57,7 +57,8 @@ class TamagotchiApp extends Application.AppBase {
         }
 
         var need = pet.primaryNeed();
-        if ((need == "Hungry" || need == "Needs play" || need == "Messy") && StorageManager.vibesEnabled()) {
+        var messy = (need == "Messy" && pet.isMessy());
+        if ((need == "Hungry" || need == "Needs play" || messy) && StorageManager.vibesEnabled()) {
             try {
                 Attention.vibrate([ new Attention.VibeProfile(50, 120) ]);
             } catch (ex) {
