@@ -13,13 +13,15 @@
             <!-- Every Connect IQ watch on CIQ 4.0+ that supports watch-apps. The UI
                  is drawn responsively in code, so all screen shapes/sizes are handled.
                  Generated from the SDK device DB; Edge bike computers and handheld GPS
-                 units are intentionally excluded (not watches). -->
+                 units are intentionally excluded (not watches).
+
+                 NOTE: fr70, fr170, fr170m and d2mach2pro are recognised only by SDK
+                 9.2.0+. The release CI image is pinned to 9.1.0, so they're omitted
+                 until that image is bumped — re-add them when CI updates. -->
 
             <!-- Forerunner (incl. the 970, primary target) -->
             <iq:product id="fr165"/>
             <iq:product id="fr165m"/>
-            <iq:product id="fr170"/>
-            <iq:product id="fr170m"/>
             <iq:product id="fr255"/>
             <iq:product id="fr255m"/>
             <iq:product id="fr255s"/>
@@ -28,7 +30,6 @@
             <iq:product id="fr265s"/>
             <iq:product id="fr57042mm"/>
             <iq:product id="fr57047mm"/>
-            <iq:product id="fr70"/>
             <iq:product id="fr955"/>
             <iq:product id="fr965"/>
             <iq:product id="fr970"/>
@@ -83,7 +84,6 @@
             <iq:product id="d2airx10"/>
             <iq:product id="d2mach1"/>
             <iq:product id="d2mach2"/>
-            <iq:product id="d2mach2pro"/>
             <iq:product id="descentg2"/>
             <iq:product id="descentmk343mm"/>
             <iq:product id="descentmk351mm"/>

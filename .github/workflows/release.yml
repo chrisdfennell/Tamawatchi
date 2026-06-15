@@ -55,8 +55,10 @@ jobs:
             -y developer_key.der \
             -o bin/Tamawatchi.iq
 
-          # Side-loadable .prg for every supported product (see manifest.xml).
-          for device in fr255 fr265 fr955 fr965 venu2 venu3 fenix7 fenix7pro epix2 \
+          # Side-loadable .prg for a representative spread of screen sizes/shapes
+          # (the .iq above already covers every product in manifest.xml).
+          for device in fr970 fr965 fr955 fr265 fr255 fr255s venu3 venu2 venusq2 \
+                        vivoactive5 instinct3amoled45mm fenix7 fenix7pro epix2 \
                         fenix843mm fenix847mm fenix8pro47mm fenix8solar47mm fenix8solar51mm; do
             echo "Compiling .prg for $device..."
             java -jar /connectiq/bin/monkeybrains.jar \
