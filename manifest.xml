@@ -10,24 +10,85 @@
         minSdkVersion="4.0.0">
 
         <iq:products>
-            <!-- Add/remove product IDs for your release targets. These are common modern test targets. -->
+            <!-- Every Connect IQ watch on CIQ 4.0+ that supports watch-apps. The UI
+                 is drawn responsively in code, so all screen shapes/sizes are handled.
+                 Generated from the SDK device DB; Edge bike computers and handheld GPS
+                 units are intentionally excluded (not watches). -->
+
+            <!-- Forerunner (incl. the 970, primary target) -->
+            <iq:product id="fr165"/>
+            <iq:product id="fr165m"/>
+            <iq:product id="fr170"/>
+            <iq:product id="fr170m"/>
             <iq:product id="fr255"/>
+            <iq:product id="fr255m"/>
+            <iq:product id="fr255s"/>
+            <iq:product id="fr255sm"/>
             <iq:product id="fr265"/>
+            <iq:product id="fr265s"/>
+            <iq:product id="fr57042mm"/>
+            <iq:product id="fr57047mm"/>
+            <iq:product id="fr70"/>
             <iq:product id="fr955"/>
             <iq:product id="fr965"/>
-            <iq:product id="venu2"/>
-            <iq:product id="venu3"/>
+            <iq:product id="fr970"/>
+
+            <!-- fenix / epix / enduro -->
             <iq:product id="fenix7"/>
             <iq:product id="fenix7pro"/>
-            <iq:product id="epix2"/>
-
-            <!-- fenix 8 family (also covers tactix 8 / quatix 8 of the same size).
-                 The Solar models are MIP: fenix8solar51mm is 280x280, 47mm is 260x260. -->
+            <iq:product id="fenix7pronowifi"/>
+            <iq:product id="fenix7s"/>
+            <iq:product id="fenix7spro"/>
+            <iq:product id="fenix7x"/>
+            <iq:product id="fenix7xpro"/>
+            <iq:product id="fenix7xpronowifi"/>
             <iq:product id="fenix843mm"/>
             <iq:product id="fenix847mm"/>
             <iq:product id="fenix8pro47mm"/>
             <iq:product id="fenix8solar47mm"/>
             <iq:product id="fenix8solar51mm"/>
+            <iq:product id="fenixe"/>
+            <iq:product id="epix2"/>
+            <iq:product id="epix2pro42mm"/>
+            <iq:product id="epix2pro47mm"/>
+            <iq:product id="epix2pro51mm"/>
+            <iq:product id="enduro3"/>
+
+            <!-- Venu / Vivoactive -->
+            <iq:product id="venu2"/>
+            <iq:product id="venu2plus"/>
+            <iq:product id="venu2s"/>
+            <iq:product id="venu3"/>
+            <iq:product id="venu3s"/>
+            <iq:product id="venu441mm"/>
+            <iq:product id="venu445mm"/>
+            <iq:product id="venusq2"/>
+            <iq:product id="venusq2m"/>
+            <iq:product id="venux1"/>
+            <iq:product id="vivoactive5"/>
+            <iq:product id="vivoactive6"/>
+
+            <!-- Instinct (MIP, incl. semioctagon dual-display models) -->
+            <iq:product id="instinct3amoled45mm"/>
+            <iq:product id="instinct3amoled50mm"/>
+            <iq:product id="instinct3solar45mm"/>
+            <iq:product id="instinctcrossoveramoled"/>
+            <iq:product id="instincte40mm"/>
+            <iq:product id="instincte45mm"/>
+
+            <!-- Specialty watches: golf (Approach), dive (Descent), aviation (D2), MARQ -->
+            <iq:product id="approachs50"/>
+            <iq:product id="approachs7042mm"/>
+            <iq:product id="approachs7047mm"/>
+            <iq:product id="d2airx10"/>
+            <iq:product id="d2mach1"/>
+            <iq:product id="d2mach2"/>
+            <iq:product id="d2mach2pro"/>
+            <iq:product id="descentg2"/>
+            <iq:product id="descentmk343mm"/>
+            <iq:product id="descentmk351mm"/>
+            <iq:product id="marq2"/>
+            <iq:product id="marq2aviator"/>
         </iq:products>
 
         <iq:permissions>

@@ -7,6 +7,15 @@ and this project aims to follow [Semantic Versioning](https://semver.org/spec/v2
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-06-15
+
+### Added
+- **Massively expanded watch compatibility** — the app now targets 65 Garmin
+  watches (up from 14), including the **Forerunner 970** and the rest of the
+  modern Forerunner, fenix 7/8, epix 2, enduro 3, Venu 2/3/4, Venu Sq 2,
+  Venu X1, Vivoactive 5/6, Instinct 3/E, and the Approach, Descent, D2 and
+  MARQ 2 specialty watches. Every Connect IQ watch on CIQ 4.0+ is covered.
+
 ## [1.2.1] - 2026-06-14
 
 ### Fixed
