@@ -27,6 +27,12 @@ class TamawatchiView extends WatchUi.View {
     var animMax = 0;
     var animTimer = null;
 
+    // loadResource() decodes a PNG from flash on every call, which is far too
+    // expensive to run on each 1 Hz / animation redraw. Keep the most recently
+    // shown sprite and only reload when the requested drawable actually changes.
+    var spriteCache = null;
+    var spriteCacheId = null;
+
     function initialize(model as Pet) {
         View.initialize();
         pet = model;
@@ -928,56 +934,67 @@ class TamawatchiView extends WatchUi.View {
         dc.fillRectangle(cx + 3 * s, cy - 2 * s, 3 * s, 4 * s);
     }
 
+    // Single-slot bitmap cache. Only one sprite is ever shown per redraw, and it
+    // stays the same across frames, so this turns ~1 PNG decode per second into
+    // one decode per actual sprite change.
+    function cachedDrawable(id) {
+        if (spriteCache == null || spriteCacheId != id) {
+            spriteCache = WatchUi.loadResource(id);
+            spriteCacheId = id;
+        }
+        return spriteCache;
+    }
+
     function bitmapForState() {
         if (!pet.alive) {
-            return WatchUi.loadResource(Rez.Drawables.Ghost);
+            return cachedDrawable(Rez.Drawables.Ghost);
         }
         if (pet.stage == STAGE_EGG) {
-            return WatchUi.loadResource(Rez.Drawables.Egg);
+            return cachedDrawable(Rez.Drawables.Egg);
         }
         if (pet.stage == STAGE_BABY) {
-            return WatchUi.loadResource(Rez.Drawables.Baby);
+            return cachedDrawable(Rez.Drawables.Baby);
         }
         return bitmapForPetType(pet.petType, pet.mood(), pet.stage);
     }
 
     function bitmapForPetType(type as Number, mood as Number, stage as Number) {
         if (type == PET_CAT) {
-            if (mood == MOOD_HAPPY) { return WatchUi.loadResource(Rez.Drawables.CatHappy); }
-            if (mood == MOOD_SAD) { return WatchUi.loadResource(Rez.Drawables.CatSad); }
-            if (mood == MOOD_SLEEP) { return WatchUi.loadResource(Rez.Drawables.CatSleep); }
-            if (mood == MOOD_SICK) { return WatchUi.loadResource(Rez.Drawables.CatSick); }
-            return WatchUi.loadResource(Rez.Drawables.CatIdle);
+            if (mood == MOOD_HAPPY) { return cachedDrawable(Rez.Drawables.CatHappy); }
+            if (mood == MOOD_SAD) { return cachedDrawable(Rez.Drawables.CatSad); }
+            if (mood == MOOD_SLEEP) { return cachedDrawable(Rez.Drawables.CatSleep); }
+            if (mood == MOOD_SICK) { return cachedDrawable(Rez.Drawables.CatSick); }
+            return cachedDrawable(Rez.Drawables.CatIdle);
         }
         if (type == PET_DOG) {
-            if (mood == MOOD_HAPPY) { return WatchUi.loadResource(Rez.Drawables.DogHappy); }
-            if (mood == MOOD_SAD) { return WatchUi.loadResource(Rez.Drawables.DogSad); }
-            if (mood == MOOD_SLEEP) { return WatchUi.loadResource(Rez.Drawables.DogSleep); }
-            if (mood == MOOD_SICK) { return WatchUi.loadResource(Rez.Drawables.DogSick); }
-            return WatchUi.loadResource(Rez.Drawables.DogIdle);
+            if (mood == MOOD_HAPPY) { return cachedDrawable(Rez.Drawables.DogHappy); }
+            if (mood == MOOD_SAD) { return cachedDrawable(Rez.Drawables.DogSad); }
+            if (mood == MOOD_SLEEP) { return cachedDrawable(Rez.Drawables.DogSleep); }
+            if (mood == MOOD_SICK) { return cachedDrawable(Rez.Drawables.DogSick); }
+            return cachedDrawable(Rez.Drawables.DogIdle);
         }
         if (type == PET_DRAGON) {
-            if (mood == MOOD_HAPPY) { return WatchUi.loadResource(Rez.Drawables.DragonHappy); }
-            if (mood == MOOD_SAD) { return WatchUi.loadResource(Rez.Drawables.DragonSad); }
-            if (mood == MOOD_SLEEP) { return WatchUi.loadResource(Rez.Drawables.DragonSleep); }
-            if (mood == MOOD_SICK) { return WatchUi.loadResource(Rez.Drawables.DragonSick); }
-            return WatchUi.loadResource(Rez.Drawables.DragonIdle);
+            if (mood == MOOD_HAPPY) { return cachedDrawable(Rez.Drawables.DragonHappy); }
+            if (mood == MOOD_SAD) { return cachedDrawable(Rez.Drawables.DragonSad); }
+            if (mood == MOOD_SLEEP) { return cachedDrawable(Rez.Drawables.DragonSleep); }
+            if (mood == MOOD_SICK) { return cachedDrawable(Rez.Drawables.DragonSick); }
+            return cachedDrawable(Rez.Drawables.DragonIdle);
         }
         if (type == PET_PENGUIN) {
-            if (mood == MOOD_HAPPY) { return WatchUi.loadResource(Rez.Drawables.PenguinHappy); }
-            if (mood == MOOD_SAD) { return WatchUi.loadResource(Rez.Drawables.PenguinSad); }
-            if (mood == MOOD_SLEEP) { return WatchUi.loadResource(Rez.Drawables.PenguinSleep); }
-            if (mood == MOOD_SICK) { return WatchUi.loadResource(Rez.Drawables.PenguinSick); }
-            return WatchUi.loadResource(Rez.Drawables.PenguinIdle);
+            if (mood == MOOD_HAPPY) { return cachedDrawable(Rez.Drawables.PenguinHappy); }
+            if (mood == MOOD_SAD) { return cachedDrawable(Rez.Drawables.PenguinSad); }
+            if (mood == MOOD_SLEEP) { return cachedDrawable(Rez.Drawables.PenguinSleep); }
+            if (mood == MOOD_SICK) { return cachedDrawable(Rez.Drawables.PenguinSick); }
+            return cachedDrawable(Rez.Drawables.PenguinIdle);
         }
         if (type == PET_FOX) {
-            if (mood == MOOD_HAPPY) { return WatchUi.loadResource(Rez.Drawables.FoxHappy); }
-            if (mood == MOOD_SAD) { return WatchUi.loadResource(Rez.Drawables.FoxSad); }
-            if (mood == MOOD_SLEEP) { return WatchUi.loadResource(Rez.Drawables.FoxSleep); }
-            if (mood == MOOD_SICK) { return WatchUi.loadResource(Rez.Drawables.FoxSick); }
-            return WatchUi.loadResource(Rez.Drawables.FoxIdle);
+            if (mood == MOOD_HAPPY) { return cachedDrawable(Rez.Drawables.FoxHappy); }
+            if (mood == MOOD_SAD) { return cachedDrawable(Rez.Drawables.FoxSad); }
+            if (mood == MOOD_SLEEP) { return cachedDrawable(Rez.Drawables.FoxSleep); }
+            if (mood == MOOD_SICK) { return cachedDrawable(Rez.Drawables.FoxSick); }
+            return cachedDrawable(Rez.Drawables.FoxIdle);
         }
-        return WatchUi.loadResource(Rez.Drawables.CatIdle);
+        return cachedDrawable(Rez.Drawables.CatIdle);
     }
 
     function stageName() as String {

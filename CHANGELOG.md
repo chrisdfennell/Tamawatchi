@@ -7,6 +7,14 @@ and this project aims to follow [Semantic Versioning](https://semver.org/spec/v2
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-06-19
+
+### Fixed
+- **Major performance fix** — the pet sprite was being re-decoded from flash on
+  every redraw (once a second, and every ~220 ms during a care animation), which
+  slowed the watch noticeably whenever the pet was on screen. Sprites are now
+  cached and only reloaded when the displayed image actually changes.
+
 ## [1.3.0] - 2026-06-15
 
 ### Added
